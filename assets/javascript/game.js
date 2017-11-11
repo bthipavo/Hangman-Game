@@ -6,7 +6,7 @@
 	var guessArrayCounter = 0;
 	var numberGuesses = 0;
 	var currentWordCount = 0;
-	var letters, blankInput;
+	var letters2, letters3, blankInput;
 
 //checks to see if there is a game going on
 	function checkGame() {
@@ -65,9 +65,10 @@
 
 		for (i = 0; i < currentWord.length; i++) {
 			if (letter.toUpperCase() == currentWord[i].toUpperCase()) {
-				document.getElementById("correctWord").innerHTML += currentWord[i].toUpperCase()  + " ";
+				// (document.getElementById("letter"))[i].style.opacity = 1;
+				//document.getElementById("correctWord").innerHTML += currentWord[i].toUpperCase()  + " ";
 				currentWordCount--;
-				console.log(" current word count left " + currentWordCount);
+				letters3[i].style.opacity = 1;
 
 				if (currentWordCount == 0) {
 					document.getElementById("win").innerHTML = " yay you win!";
@@ -86,18 +87,29 @@
 	}
 
 	function printBlanks() {
-
-
-        var letter;
+		letters2 = document.getElementById("letter");
+		var appendLetter;
+		letters3 = letters2.children;
+		// letters3 = letters2.children;
+		// var appendLetter;
         for (i = 0; i < currentWord.length; i++) {
-            if(currentWord.charAt(i) == ' ') {
-            	document.getElementById("letter").insertAdjacentHTML('beforeend', 'A');
-            }
-            else {
-            // letter = '<li class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</li>';
-            document.getElementById("letter").insertAdjacentHTML('beforeend', '__ ');
-        }
-	}
+        	// letters2[i].style.opacity = 0.5;
+            // if(currentWord.charAt(i) == ' ') {
+            // 	document.getElementById("letter").insertAdjacentHTML('beforeend', 'A');
+            // }
+            // else {
+            // // letter = '<li class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</li>';
+            appendLetter = ('<li>' + currentWord.charAt(i).toUpperCase() + '</li>');
+            letters2.insertAdjacentHTML('beforeend', appendLetter);
+            letters3[i].style.opacity = 0.5;
+
+        //}
+	}	
+	
+
+	console.log("letters3");
+	console.log(letters3);
+	console.log(letters2);
 }
 	function remainingGuesses() {
 
