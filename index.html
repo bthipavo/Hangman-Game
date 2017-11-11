@@ -13,21 +13,17 @@
 		<p>Letters Guessed: <span id="ltrGuessed"></span></p>
 		<p>Number of Guesses: <span id="numGuesses"></span><p>
 		<p><span id="errors"></span></p>
-		<p>Correct Word: <span id="correctWord"></span><p>
+		<p>Guesses Left :<span id="guessLeft"></span></p>
 		<p>Win? :<span id="win"></span></p>
+		<p>Number of Wins: <span id="numWin"></span></p>
+		<p>Number of Loss: <span id="numLoss"></span></p>
 
 	</div>
 	<script>
 		document.onkeyup=function (event){
 		var letter =event.key;
-		console.log(checkGame());
-		if (checkGame()) {
-			// console.log("letter " + letter);
-			checkLetters(letter);
-			// printLetters();
-		}
-		else getWord();
-		// console.log("guesses left" + remainingGuesses());
+		checkGame(letter);
+
 	}
 	</script>
 
