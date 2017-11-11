@@ -7,23 +7,76 @@
 	<title></title>
 </head>
 <body>
-	<div class="center-block">
-		<p>Please press any key to play</p>
+	<div class="page-header text-center">
+		<h1>Let's Play Hangman!</h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default text-center">
+					<h1>Category: Boy Bands</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default text-center">
+					<p>Please press any key to play</p>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
-	<div>
-		<h1>Boy Bands</h1>
+    <div class="jumbotron">
+      <p class="text-center"><span id = "letter"></span></p>
+      </div>
+
+    </div>
+	<div class = "row">
+		<div class="col-sm-8 pull-left">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+        			<h3 class="panel-title text-center">Current Game Stats</h3>
+      			</div>
+      			<div class="panel-body">
+      				<p>Letters Guessed: <span id="ltrGuessed"></span></p>
+      				<p>Number of Guesses: <span id="numGuesses"></span><p>
+      				<p>Guesses Left :<span id="guessLeft"></span></p>
+      			</div>
+    		</div>
+    	</div>
+    	<div class="col-sm-4">
+      		<div class="panel panel-default">
+    			<div class="panel-heading">
+        			<h3 class="panel-title text-center">Win/Loss</h3>
+      			</div>
+      			<div class="panel-body">
+      				<p>Number of Wins: <span id="numWin"></span></p>
+					<p>Number of Loss: <span id="numLoss"></span></p>
+      			</div>
+    		</div>
+    	</div>
 	</div>
 
+	<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default text-center">
+					<p><span id="errors"></span></p>
+					<p><span id="win"></span></p>
+				</div>
+			</div>
+		</div>
 	<div>
-		<p>Word: <span id = "letter"></span></p>
-		<p>Letters Guessed: <span id="ltrGuessed"></span></p>
-		<p>Number of Guesses: <span id="numGuesses"></span><p>
-		<p><span id="errors"></span></p>
-		<p>Guesses Left :<span id="guessLeft"></span></p>
-		<p>Win? :<span id="win"></span></p>
-		<p>Number of Wins: <span id="numWin"></span></p>
-		<p>Number of Loss: <span id="numLoss"></span></p>
+
+		<!-- <p>Word: <span id = "letter"></span></p> -->
+		<!-- <p>Letters Guessed: <span id="ltrGuessed"></span></p> -->
+		<!-- <p>Number of Guesses: <span id="numGuesses"></span><p> -->
+		<!-- <p><span id="errors"></span></p> -->
+		<!-- <p>Guesses Left :<span id="guessLeft"></span></p> -->
+		<!-- <p>Win? :<span id="win"></span></p> -->
+<!-- 		<p>Number of Wins: <span id="numWin"></span></p>
+		<p>Number of Loss: <span id="numLoss"></span></p> -->
 
 	</div>
 	<script>
