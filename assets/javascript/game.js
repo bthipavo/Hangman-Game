@@ -134,9 +134,9 @@
 		letters3 = letters2.children;
 		// console.log(" current word length" + currentWord.length);
         for (var i = 0; i < currentWord.length; i++) {
-            appendLetter = ('<li>' + currentWord.charAt(i).toUpperCase() + '</li>');
+            appendLetter = ('<li class="letter">' + currentWord.charAt(i).toUpperCase() + '</li>');
             letters2.insertAdjacentHTML('beforeend', appendLetter);
-            letters3[i].style.opacity = 0;
+            letters3[i].style.opacity = 0.5;
 
         //}
 	}	
