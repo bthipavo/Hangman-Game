@@ -7,10 +7,27 @@
 </head>
 <body>
 	<p>Please press any key to play</p>
+
+	<div>
+		<p>Word: <span id = "letter"></span></p>
+		<p>Letters Guessed: <span id="ltrGuessed"></span></p>
+		<p>Number of Guesses: <span id="numGuesses"></span><p>
+		<p><span id="errors"></span></p>
+		<p>Correct Word: <span id="correctWord"></span><p>
+		<p>Win? :<span id="win"></span></p>
+
+	</div>
 	<script>
 		document.onkeyup=function (event){
 		var letter =event.key;
-		game.getWord();
+		console.log(checkGame());
+		if (checkGame()) {
+			// console.log("letter " + letter);
+			checkLetters(letter);
+			// printLetters();
+		}
+		else getWord();
+		// console.log("guesses left" + remainingGuesses());
 	}
 	</script>
 
