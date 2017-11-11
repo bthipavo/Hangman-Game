@@ -102,7 +102,7 @@
 		for (var i = 0; i < currentWord.length; i++) {
 			if (letter.toUpperCase() == currentWord[i].toUpperCase()) {
 				currentWordCount--;
-				letters3[i].style.opacity = 1;
+				letters3[i].style.color = "black";
 				console.log("word count " + currentWordCount);
 			}
 			else {
@@ -136,7 +136,7 @@
         for (var i = 0; i < currentWord.length; i++) {
             appendLetter = ('<li class="letter">' + currentWord.charAt(i).toUpperCase() + '</li>');
             letters2.insertAdjacentHTML('beforeend', appendLetter);
-            letters3[i].style.opacity = 0;
+            letters3[i].style.color = "transparent";
 
         //}
 	}	
