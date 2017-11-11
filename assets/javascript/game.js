@@ -45,11 +45,11 @@
 		if(currentWordCount == 0) {
 			startGame--;
 		}
-		if ((totalGuesses - numberLeft) == 0 && startGame ==0){
+		if ((totalGuesses - numberLeft) <= 0 && startGame ==0){
 			numberLoss++;
 			this.newGame();
 		}
-		if ((totalGuesses - numberLeft) == 0)
+		if ((totalGuesses - numberLeft) <= 0)
 			startGame--;
 	}
 //function randomly picks a word from the list//
@@ -99,24 +99,29 @@
 		// console.log("in correct guess function " + currentWord);
 		var counter1 = 0;
 		// console.log("letter being type " + letter);
-		for (var i = 0; i < currentWord.length; i++) {
-			if (letter.toUpperCase() == currentWord[i].toUpperCase()) {
-				currentWordCount--;
-				letters3[i].style.color = "black";
-				console.log("word count " + currentWordCount);
-			}
-			else {
-				counter1++;
-				}
-			if (currentWordCount == 0) {
-				// numberWins++;
-				document.getElementById("win").innerHTML = " yay you win!";
-			}
-			if (counter1 >= currentWord.length) {
-				remainingGuesses();
-			}
-
+		if (letter == " ") {
+			currentWordCount = currentWordCount;
 		}
+		else {
+			for (var i = 0; i < currentWord.length; i++) {
+				if (letter.toUpperCase() == currentWord[i].toUpperCase()) {
+					currentWordCount--;
+					letters3[i].style.color = "black";
+					console.log("word count " + currentWordCount);
+				}
+				else {
+					counter1++;
+					}
+				if (currentWordCount == 0) {
+					// numberWins++;
+					document.getElementById("win").innerHTML = " yay you win!";
+				}
+				if (counter1 >= currentWord.length) {
+					remainingGuesses();
+				}
+
+			}
+			}	
 
 	}
 
